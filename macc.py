@@ -6,8 +6,8 @@ import tkinter
 
 # window setup()
 window = tkinter.Tk()
-window.title("MACC Scoreboard by William")
-window.geometry('720x720')
+window.title("MACC Scoreboard")
+window.geometry('1080x720')
 
 #global score variables
 score_a = 0
@@ -51,14 +51,16 @@ def reset_b():
 	display_b.grid(row = 1, column = 1)
 
 #scoreboard labels
-tkinter.Label(window, text = "Home Score").grid(row = 0, column = 0)
-tkinter.Label(window, text = "Away Score").grid(row = 0, column = 1)
+tkinter.Label(window, text = "Home Score", font=("Helvetica", 50)).grid(row = 0, column = 0)
+tkinter.Label(window, text = "Away Score", font=("Helvetica", 50)).grid(row = 0, column = 1)
+tkinter.Label(window, text = "Made by William Brannock", font=("Helvetica", 20), anchor = "w", width = 40).grid(row = 5, column = 0)
+tkinter.Label(window, text = "Available on Github at github.com/wbrannock", width = 40, anchor = "w", font=("Helvetica", 20)).grid(row = 6, column = 0)
 
 #Team A Score Display
-display_a = tkinter.Label(window, text = str(score_a), font=("Helvetica", 50))
+display_a = tkinter.Label(window, text = str(score_a), font=("Helvetica", 125))
 display_a.grid(row = 1, column = 0)
 
-display_b = tkinter.Label(window, text = str(score_b), font=("Helvetica", 50))
+display_b = tkinter.Label(window, text = str(score_b), font=("Helvetica", 125))
 display_b.grid(row = 1, column = 1)
 
 
