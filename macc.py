@@ -1,6 +1,6 @@
 import tkinter
 #MACC Scoreboard
-#Version 0.5
+#Version 1.0
 #by William Brannock
 
 
@@ -50,16 +50,35 @@ def reset_b():
 	display_b.config(text = str(score_b))
 	display_b.grid(row = 1, column = 1)
 
+#cycles through the subjects
+subject_count = 0
+def sub_cycle():
+	subjects = ["Science", "Math", "All-Around", "English", "Social Studies"]
+	global subject_count
+	if (subject_count < 4):
+		subject_count = subject_count + 1
+	else:
+		subject_count = 0
+	subject_label.config(text = subjects[subject_count])
+	subject_label.grid(row = 6, column = 0)
+	
+
+#subject lablel
+subject_label = tkinter.Label(window, text = "Subject", font=("Helvetica", 50), anchor = "w")
+subject_label.grid(row = 6, column = 0)
+#subject button
+sub_button = tkinter.Button(window, text = "Next Subject", command = sub_cycle).grid(row = 6, column = 1)
+
 #scoreboard labels
 tkinter.Label(window, text = "Home Score", font=("Helvetica", 50)).grid(row = 0, column = 0)
 tkinter.Label(window, text = "Away Score", font=("Helvetica", 50)).grid(row = 0, column = 1)
-tkinter.Label(window, text = "Made by William Brannock", font=("Helvetica", 20), anchor = "w", width = 40).grid(row = 5, column = 0)
-tkinter.Label(window, text = "Available on Github at github.com/wbrannock", width = 40, anchor = "w", font=("Helvetica", 20)).grid(row = 6, column = 0)
+tkinter.Label(window, text = "Made by William Brannock", font=("Helvetica", 20), anchor = "w", width = 40).grid(row = 7, column = 0)
+tkinter.Label(window, text = "Available on Github at github.com/wbrannock", width = 40, anchor = "w", font=("Helvetica", 20)).grid(row = 8, column = 0)
 
 #Team A Score Display
 display_a = tkinter.Label(window, text = str(score_a), font=("Helvetica", 125))
 display_a.grid(row = 1, column = 0)
-
+#Team B Score Display
 display_b = tkinter.Label(window, text = str(score_b), font=("Helvetica", 125))
 display_b.grid(row = 1, column = 1)
 
