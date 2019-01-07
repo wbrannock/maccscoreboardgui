@@ -1,6 +1,6 @@
 import tkinter
 #MACC Scoreboard
-#Version 1.5
+#Version 1.5.1
 #by William Brannock
 
 
